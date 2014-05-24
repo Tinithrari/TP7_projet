@@ -33,12 +33,13 @@ public class Paquet {
 		int face=1;
 		while(nombreCarte < paquet.length)
 		{
-			if(face == 13)
+			if(face == 14)
 			{
 				face = 1;
 				couleur++;
 			}
-			paquet[nombreCarte] = new Carte(couleur,face);
+			paquet[nombreCarte] = new Carte(face,couleur);
+			face++;
 			nombreCarte++;
 		}
 	}
@@ -64,9 +65,9 @@ public class Paquet {
 	public Carte pioche() throws Exception{
 		if (nombreCarte <= 0)
 			throw new Exception("Plus de carte");
+		nombreCarte--;
 		Carte piocher = paquet[nombreCarte];
 		paquet[nombreCarte]=null;
-		nombreCarte--;
 		return piocher;
 	}
 	/**
@@ -119,15 +120,19 @@ public class Paquet {
 	 * permet de retourner une carte
 	 * @return retourne une carte du paquet
 	 * @param l'index
+	 * @throws Exception lancé si index en dehors du champs de carte disponible
 	 */
-	public Carte getCarte(int i){
+	public Carte getCarte(int i) throws Exception{
+		if(i > nombreCarte-1 || i < 0)
+			throw new Exception("Index out of Array :" + i + ". Limit : 0 to "+(nombreCarte-1));
 		return paquet[i];
 	}
 	
 	public int comptePoint() throws Exception{
 		int points=0;
+		int nbCarte = getNombreCarte();
 		Face tmp;
-		for(int i = 0; i < getNombreCarte(); i++)
+		for(int i = 0; i < nbCarte; i++)
 		{
 			points+=pioche().getValeur();
 		}

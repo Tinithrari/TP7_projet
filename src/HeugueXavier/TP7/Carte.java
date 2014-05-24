@@ -11,7 +11,6 @@ public class Carte {
 	private int valeur;
 	
 	/**
-	 * @deprecated
 	 * @param face valeur de la face
 	 * @param couleur valeur de la couleur
 	 * @throws Exception
@@ -80,19 +79,12 @@ public class Carte {
 		default:
 			throw new Exception("Couleur Incorrecte");
 		}
-		this.valeur = face;
+		if (face==1)
+			this.valeur = 14;
+		else
+			this.valeur = face;
 	}
-	/**
-	 * 
-	 * @param face Valeur de la face
-	 * @param couleur Valeur de la couleur
-	 * @see Face
-	 * @see Couleur
-	 */
-	public Carte(Face face,Couleur couleur){
-		this.face = face;
-		this.couleur = couleur;
-	}
+
 	/**
 	 * Permet d'obtenir la valeur d'une carte
 	 * @return face de la carte
@@ -124,7 +116,7 @@ public class Carte {
 	 * Permet de retourner une chaine de caractère indiquant les valeurs de la carte
 	 */
 	public String toString(){
-		return face+" de "+couleur+"\n";
+		return face+" de "+couleur;
 	}
 	
 	/**
@@ -134,5 +126,13 @@ public class Carte {
 	
 	public int getValeur(){
 		return valeur;
+	}
+	
+	public Couleur getCouleur(){
+		return couleur;
+	}
+	
+	public boolean equals(Carte c){
+		return face==c.getFace() && couleur==c.getCouleur();
 	}
 }
