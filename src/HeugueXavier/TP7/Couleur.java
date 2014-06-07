@@ -1,9 +1,9 @@
 package HeugueXavier.TP7;
 public enum Couleur {
-	Coeur("Coeur"),
-	Carreau("Carreau"),
-	Trefle("Trefle"),
-	Pique("Pique");
+	Coeur("coeur"),
+	Carreau("carreau"),
+	Trefle("trefle"),
+	Pique("pique");
 	
 	private String appelation;
 	

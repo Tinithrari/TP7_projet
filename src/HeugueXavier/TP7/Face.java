@@ -11,8 +11,8 @@ public enum Face {
 	Neuf("9"),
 	Dix("10"),
 	Valet("valet"),
-	Dame("Dame"),
-	Roi("Roi"),
+	Dame("dame"),
+	Roi("roi"),
 	As("as");
 	
 	private String nom;
