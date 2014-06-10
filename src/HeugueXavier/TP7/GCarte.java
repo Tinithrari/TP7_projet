@@ -46,50 +46,50 @@ public class GCarte {
 	 */
 	public void draw(){
 		dos.bind();
-		glEnable(GL_TEXTURE_2D);
+		glTranslatef( posX+0.25f, posY+0.5f, posZ+0.005f);
 		GL11.glBegin(GL11.GL_QUADS);
 			glTexCoord2f(1,1);
-			glVertex3d(-0.25,-0.5,0);
+			glVertex3d(-0.25,-0.5,0.0005);
 			glTexCoord2f(0,1);
-			glVertex3d(0.25,-0.5,0);
+			glVertex3d(0.25,-0.5,0.0005);
 			glTexCoord2f(0,0);
-			glVertex3d(0.25,0.5,0);
+			glVertex3d(0.25,0.5,0.0005);
 			glTexCoord2f(1,0);
-			glVertex3d(-0.25,0.5,0);
+			glVertex3d(-0.25,0.5,0.0005);
 			glColor3ub((byte)255,(byte)255,(byte)255);
 		GL11.glEnd();
 		face.bind();
 		GL11.glBegin(GL11.GL_QUADS);
 			glTexCoord2f(1,1);
-			glVertex3d(-0.25,-0.5,-0.01);
+			glVertex3d(-0.25,-0.5,-0.0005);
 			glTexCoord2f(0,1);
-			glVertex3d(0.25,-0.5,-0.01);
+			glVertex3d(0.25,-0.5,-0.0005);
 			glTexCoord2f(0,0);
-			glVertex3d(0.25,0.5,-0.01);
+			glVertex3d(0.25,0.5,-0.0005);
 			glTexCoord2f(1,0);
-			glVertex3d(-0.25,0.5,-0.01);
+			glVertex3d(-0.25,0.5,-0.0005);
 		GL11.glEnd();
+		glDisable(GL_TEXTURE_2D);
 		GL11.glBegin(GL11.GL_QUADS);
-			glVertex3d(posX,posY+1,posZ);
-			glVertex3d(posX,posY+1,posZ-0.01);
-			glVertex3d(posX,posY,posZ-0.01);
-			glVertex3d(posX,posY,posZ);
+			glVertex3d(-0.25,0.5,0.0005);
+			glVertex3d(-0.25,0.5,-0.0005);
+			glVertex3d(-0.25,-0.5, -0.0005);
+			glVertex3d(-0.25,-0.5,0.0005);
 			
-			glVertex3d(posX+posY+1,posY+1,posZ);
-			glVertex3d(posX+posY+1,posY+1,posZ-0.01);
-			glVertex3d(posX+posY+1,posY,posZ-0.01);
-			glVertex3d(posX+posY+1,posY,posZ);
+			glVertex3d(0.25,0.5,0.0005);
+			glVertex3d(0.25,0.5,-0.0005);
+			glVertex3d(0.25,-0.5,-0.0005);
+			glVertex3d(0.25,-0.5,0.0005);
 			
-			glVertex3d(posX+posY+1,posY+1,posZ);
-			glVertex3d(posX+posY+1,posY+1,posZ-0.01);
-			glVertex3d(posX,posY+1,posZ-0.01);
-			glVertex3d(posX,posY+1,posZ);
+			glVertex3d(0.25,0.5,0.0005);
+			glVertex3d(0.25,0.5,0.0005);
+			glVertex3d(-0.25,0.5,-0.0005);
+			glVertex3d(-0.25,0.5,0.0005);
 			
-			glVertex3d(posX+posY+1,posY,posZ);
-			glVertex3d(posX+posY+1,posY,posZ-0.01);
-			glVertex3d(posX,posY,posZ-0.01);
-			glVertex3d(posX,posY,posZ);
-			glDisable(GL_TEXTURE_2D);
+			glVertex3d(0.25,-0.5,0.0005);
+			glVertex3d(0.25,-0.5,-0.0005);
+			glVertex3d(-0.25,0.5,-0.0005);
+			glVertex3d(-0.25,-0.5,0.0005);
 		GL11.glEnd();
 	}
 	/**
